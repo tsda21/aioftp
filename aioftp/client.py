@@ -489,7 +489,8 @@ class BaseClient:
         line = line[date_time_end + 1:].lstrip()
         with setlocale("C"):
             strptime = datetime.datetime.strptime
-            date_time = strptime(date_time_str, "%m/%d/%Y %I:%M %p")
+            date_time = strptime(date_time_str, "%m-%d-%y %I:%M%p")
+            # date_time = strptime(date_time_str, "%m/%d/%Y %I:%M %p")
         info = {}
         info["modify"] = self.format_date_time(date_time)
         next_space = line.index(" ")
